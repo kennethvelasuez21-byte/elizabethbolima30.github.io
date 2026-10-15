@@ -1,1 +1,0 @@
-# kennethvelasquez23.github.io
