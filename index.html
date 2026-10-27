@@ -1,419 +1,673 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Christopher Kenneth Velasquez — Customer & Technical Support Specialist</title>
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    /* ==========================================================================
-       COLOR PALETTE & DESIGN SYSTEM
-       - Dark Slate Background: #0B0F19
-       - Card Background:       #131B2E
-       - Card Hover:            #1E293B
-       - Electric Cyan Accent:  #06B6D4
-       - Vibrant Purple Accent: #8B5CF6
-       - Emerald Green Accent:  #10B981
-       - Text Primary:          #F8FAFC
-       - Text Secondary:        #94A3B8
-       ========================================================================== */
-    
-    :root {
-      --bg-slate: #0B0F19;
-      --bg-card: #131B2E;
-      --bg-card-hover: #1E293B;
-      --accent-cyan: #06B6D4;
-      --accent-purple: #8B5CF6;
-      --accent-emerald: #10B981;
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma. Elizabeth Bolima - Professional Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg-slate);
-      color: var(--text-main);
-      overflow-x: hidden;
-    }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'royal-dark': '#060b1e',
+                        'royal-navy': '#0d1636',
+                        'royal-blue': '#1a2b68',
+                        'royal-accent': '#2563eb',
+                        'royal-soft': '#3b82f6',
+                        'pastel-blue': '#bfdbfe',
+                        'pastel-ice': '#e0f2fe',
+                        'rose-accent': '#f472b6',
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
 
-    /* Custom Background Glow Effects */
-    .bg-glow-1 {
-      position: absolute;
-      top: -10rem;
-      left: -10rem;
-      width: 30rem;
-      height: 30rem;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
-      z-index: -1;
-      pointer-events: none;
-    }
+    <style>
+        /* Custom Custom Styles and Glassmorphism Rules */
+        html {
+            scroll-behavior: smooth;
+        }
 
-    .bg-glow-2 {
-      position: absolute;
-      top: 40%;
-      right: -10rem;
-      width: 35rem;
-      height: 35rem;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(11, 15, 25, 0) 70%);
-      z-index: -1;
-      pointer-events: none;
-    }
+        body {
+            background: linear-gradient(135deg, #060b1e 0%, #0d1636 50%, #151d42 100%);
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
 
-    /* Glassmorphism Cards */
-    .glass-card {
-      background-color: var(--bg-card);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      transition: all 0.3s ease;
-    }
+        /* Glassmorphism card styles */
+        .glass-card {
+            background: rgba(15, 23, 50, 0.65);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(191, 219, 254, 0.12);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
 
-    .glass-card:hover {
-      background-color: var(--bg-card-hover);
-      border-color: rgba(6, 182, 212, 0.3);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px -10px rgba(6, 182, 212, 0.2);
-    }
+        .glass-card:hover {
+            border-color: rgba(191, 219, 254, 0.3);
+            box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.25);
+        }
 
-    /* Custom Timeline Line */
-    .timeline-line {
-      position: absolute;
-      left: 20px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: linear-gradient(to bottom, #06B6D4, #8B5CF6, rgba(255, 255, 255, 0.1));
-    }
+        .glass-nav {
+            background: rgba(6, 11, 30, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(191, 219, 254, 0.1);
+        }
 
-    @media (min-width: 768px) {
-      .timeline-line {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-  </style>
+        /* Ambient background glow elements */
+        .glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(90px);
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.45;
+        }
+
+        /* Dynamic Animations */
+        @keyframes pulseGlow {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.65; transform: scale(1.08); }
+        }
+
+        .animate-pulse-slow {
+            animation: pulseGlow 8s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .animate-float {
+            animation: float 4s infinite ease-in-out;
+        }
+
+        /* Profile avatar glow ring */
+        .profile-ring {
+            background: linear-gradient(135deg, #3b82f6, #93c5fd, #f472b6, #1d4ed8);
+            background-size: 300% 300%;
+            animation: gradientBorder 6s ease infinite;
+        }
+
+        @keyframes gradientBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #060b1e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e3a8a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb;
+        }
+    </style>
 </head>
-<body class="bg-[#0B0F19] text-[#F8FAFC] relative antialiased selection:bg-cyan-500 selection:text-black">
+<body class="relative min-h-screen text-slate-100 selection:bg-blue-500 selection:text-white">
 
-  <!-- Background Ambient Gradients -->
-  <div class="bg-glow-1"></div>
-  <div class="bg-glow-2"></div>
+    <!-- Ambient Glowing Background Circles -->
+    <div class="glow-orb w-[450px] h-[450px] bg-blue-600 top-[-100px] left-[-100px] animate-pulse-slow"></div>
+    <div class="glow-orb w-[500px] h-[500px] bg-indigo-600 top-[30%] right-[-150px] animate-pulse-slow" style="animation-delay: 2s;"></div>
+    <div class="glow-orb w-[400px] h-[400px] bg-blue-400 bottom-[10%] left-[-100px] animate-pulse-slow" style="animation-delay: 4s;"></div>
 
-  <!-- NAVIGATION -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-[#0B0F19]/80 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="text-2xl font-extrabold tracking-wider flex items-center gap-1 group">
-        <span class="text-cyan-400 group-hover:scale-110 transition-transform">CKV</span>
-        <span class="text-purple-400">.</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-300">
-        <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-        <a href="#experience" class="hover:text-cyan-400 transition-colors">Experience</a>
-        <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
-        <a href="#contact" class="px-4 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/20">Get In Touch</a>
-      </nav>
-      <!-- Mobile Menu Button -->
-      <button id="menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-slate-300 hover:text-cyan-400 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
+    <!-- Navigation Bar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#home" class="group flex items-center space-x-2">
+                    <span class="text-2xl font-bold font-serif tracking-wide text-white group-hover:text-pastel-blue transition-colors">
+                        EB<span class="text-blue-400 group-hover:text-pink-400 transition-colors">.</span>
+                    </span>
+                    <span class="text-xs tracking-widest text-blue-200/60 uppercase font-medium hidden sm:inline-block pl-2 border-l border-blue-500/30">
+                        Portfolio
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-pastel-blue hover:scale-105 transition-all">About</a>
+                    <a href="#experience" class="text-sm font-medium text-slate-300 hover:text-pastel-blue hover:scale-105 transition-all">Experience</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-pastel-blue hover:scale-105 transition-all">Skills</a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-600/30 hover:shadow-blue-500/50 hover:scale-105 transition-all">
+                        Get In Touch
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2.5 rounded-lg text-blue-200 hover:text-white hover:bg-blue-900/40 focus:outline-none transition-colors" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Nav Menu Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden glass-nav border-t border-blue-500/10 px-4 pt-4 pb-6 space-y-3">
+            <a href="#about" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-blue-800/30 hover:text-pastel-blue">About</a>
+            <a href="#experience" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-blue-800/30 hover:text-pastel-blue">Experience</a>
+            <a href="#skills" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-blue-800/30 hover:text-pastel-blue">Skills</a>
+            <a href="#contact" class="mobile-nav-link block px-4 py-2.5 rounded-lg text-base font-medium text-center text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md">Get In Touch</a>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-20">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[90vh] flex items-center justify-center relative py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
+                
+                <!-- Profile Image Avatar container -->
+                <div class="relative mb-8 group">
+                    <div class="profile-ring p-1.5 rounded-full shadow-2xl shadow-blue-500/40 transform group-hover:scale-105 transition-transform duration-500">
+                        <div class="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden bg-slate-900 flex items-center justify-center relative">
+                            <!-- Image with Fallback -->
+                            <img src="MESB.jpg" 
+                                 alt="Ma. Elizabeth Bolima" 
+                                 class="w-full h-full object-cover object-top"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/300x300/1e293b/bfdbfe?text=MB';">
+                        </div>
+                    </div>
+                    <!-- Feminine Decorative Sparkle Icon Badge -->
+                    <div class="absolute bottom-2 right-2 bg-gradient-to-r from-pink-500 to-indigo-600 text-white p-2.5 rounded-full shadow-lg border-2 border-slate-900 animate-float">
+                        <i class="fas fa-[#f472b6] fa-sparkles text-sm"></i>
+                        <i class="fas fa-crown text-xs"></i>
+                    </div>
+                </div>
+
+                <!-- Main Name Header -->
+                <h1 class="text-4xl sm:text-6xl font-extrabold font-serif tracking-tight text-white mb-4">
+                    Ma. Elizabeth <span class="bg-gradient-to-r from-blue-400 via-pastel-blue to-pink-300 bg-clip-text text-transparent">Bolima</span>
+                </h1>
+
+                <!-- Role Subtitle Tagline -->
+                <p class="text-lg sm:text-2xl font-medium text-blue-200/90 max-w-3xl mb-8 leading-relaxed">
+                    Customer Support Specialist &amp; Team Leader <span class="text-pink-400 mx-2">|</span> Shopify Customer Support VA
+                </p>
+
+                <!-- Value Proposition Highlights -->
+                <div class="flex flex-wrap justify-center gap-3 mb-10 text-xs sm:text-sm">
+                    <span class="px-4 py-1.5 rounded-full glass-card text-blue-200 border border-blue-400/20">
+                        <i class="fas fa-check-circle text-blue-400 mr-2"></i>5+ Yrs Amazon CS Experience
+                    </span>
+                    <span class="px-4 py-1.5 rounded-full glass-card text-blue-200 border border-blue-400/20">
+                        <i class="fas fa-check-circle text-blue-400 mr-2"></i>Team Leadership &amp; QA
+                    </span>
+                    <span class="px-4 py-1.5 rounded-full glass-card text-blue-200 border border-blue-400/20">
+                        <i class="fas fa-check-circle text-blue-400 mr-2"></i>E-Commerce &amp; Shopify Expert
+                    </span>
+                </div>
+
+                <!-- Hero Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                    <a href="#contact" class="px-8 py-3.5 rounded-full text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-blue-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-xl shadow-blue-600/30 hover:shadow-blue-500/50 hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2">
+                        <i class="fas fa-paper-plane text-sm"></i>
+                        <span>Get In Touch</span>
+                    </a>
+                    <a href="#experience" class="px-8 py-3.5 rounded-full text-base font-semibold text-pastel-blue glass-card hover:bg-blue-900/40 border border-blue-400/30 hover:border-blue-400/60 hover:-translate-y-0.5 transition-all flex items-center justify-center space-x-2">
+                        <i class="fas fa-briefcase text-sm"></i>
+                        <span>View Experience</span>
+                    </a>
+                </div>
+
+                <!-- Scroll Down Indicator -->
+                <div class="mt-16 animate-bounce hidden sm:block">
+                    <a href="#about" class="text-blue-300/60 hover:text-pastel-blue transition-colors" aria-label="Scroll to About">
+                        <i class="fas fa-chevron-down text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-serif text-white">
+                        About <span class="text-pastel-blue">Me</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-pink-400 mx-auto mt-3 rounded-full"></div>
+                </div>
+
+                <div class="glass-card rounded-3xl p-8 sm:p-12 relative overflow-hidden">
+                    <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-12 space-y-6 text-slate-200 text-base sm:text-lg leading-relaxed">
+                            <p class="first-letter:text-4xl first-letter:font-serif first-letter:font-bold first-letter:text-pastel-blue first-letter:mr-2 first-letter:float-left">
+                                I bring over <strong>5 years of dedicated Amazon customer service</strong> expertise and over a year of specialized support in fashion and e-commerce campaigns. My experience spans full-lifecycle customer relationship management utilizing <strong>Shopify</strong>—including order fulfillment management, real-time inquiry response, shipment tracking, processing refunds, and resolving complex customer concerns with clarity and speed.
+                            </p>
+                            <p>
+                                Recognized for strong oral and written communication, leadership, and analytical problem-solving, I seamlessly adapt across multi-channel environments including live chat, email, phone, and ticketing portals (such as Gladly and Gorgias). My primary focus is turning challenges into positive customer touchpoints that boost retention and operational efficiency.
+                            </p>
+
+                            <!-- Mini Feature Highlights -->
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 mt-6 border-t border-blue-500/20 text-center">
+                                <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/10">
+                                    <div class="text-2xl font-bold text-pastel-blue mb-1">5+ Years</div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wider">E-Commerce &amp; CS</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/10">
+                                    <div class="text-2xl font-bold text-pastel-blue mb-1">15-20</div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wider">Agents Managed</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-blue-950/40 border border-blue-500/10">
+                                    <div class="text-2xl font-bold text-pastel-blue mb-1">Omnichannel</div>
+                                    <div class="text-xs text-slate-400 uppercase tracking-wider">Voice, Chat, Email</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-serif text-white">
+                        Work <span class="text-pastel-blue">History</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-pink-400 mx-auto mt-3 rounded-full"></div>
+                    <p class="text-slate-400 text-sm mt-3">A proven track record in customer operations, leadership, and virtual support.</p>
+                </div>
+
+                <!-- Timeline Container -->
+                <div class="relative border-l-2 border-blue-500/30 ml-4 sm:ml-32 space-y-12">
+
+                    <!-- Timeline Item 1 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <!-- Date Badge on Left Desktop -->
+                        <div class="hidden sm:block absolute -left-36 top-1 text-right w-28 text-xs font-semibold text-pastel-blue tracking-wider uppercase">
+                            Oct 2018 - Jun 2024
+                        </div>
+
+                        <!-- Dot Indicator -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900 group-hover:bg-pink-400 group-hover:scale-125 transition-all"></div>
+
+                        <!-- Content Card -->
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 pb-3 border-b border-blue-500/15">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-pastel-blue transition-colors">
+                                        Customer Service Representative / Team Leader
+                                    </h3>
+                                    <p class="text-sm font-medium text-blue-300">ALORICA LIPA – AMAZON</p>
+                                </div>
+                                <span class="sm:hidden mt-2 text-xs font-semibold text-pastel-blue uppercase">OCTOBER 2018 - JUNE 2024</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                                <li>Assisted in daily operations of Amazon business, managing 20-35 high-volume customer inquiries daily across voice and chat channels.</li>
+                                <li>Utilized CSC / Amazon Connect platforms to manage customer orders, refunds, order modifications, and shipment tracking.</li>
+                                <li>Led a team of 15-20 customer service agents; monitored agent performance metrics, analyzed customer surveys and feedback, and implemented targeted corrective action plans to optimize service delivery.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <!-- Date Badge on Left Desktop -->
+                        <div class="hidden sm:block absolute -left-36 top-1 text-right w-28 text-xs font-semibold text-pastel-blue tracking-wider uppercase">
+                            Mar 2025 - May 2026
+                        </div>
+
+                        <!-- Dot Indicator -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900 group-hover:bg-pink-400 group-hover:scale-125 transition-all"></div>
+
+                        <!-- Content Card -->
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 pb-3 border-b border-blue-500/15">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-pastel-blue transition-colors">
+                                        Customer Care Agent
+                                    </h3>
+                                    <p class="text-sm font-medium text-blue-300">TASKUS BATANGAS – Men's Fashion Campaign</p>
+                                </div>
+                                <span class="sm:hidden mt-2 text-xs font-semibold text-pastel-blue uppercase">MARCH 2025 - MAY 2026</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                                <li>Handled multi-channel customer communications (Phone, Email, SMS, Live Chat) with high professionalism and detail accuracy.</li>
+                                <li>Leveraged Shopify e-commerce back-end for order administration, refund requests, exchanges, tracking updates, and account edits.</li>
+                                <li>Managed unified customer inbox communications through Gladly (Gorgias equivalent).</li>
+                                <li>Resolved escalations surrounding shipping delays and account inquiries while maintaining key KPIs for response speed and CSAT.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <!-- Date Badge on Left Desktop -->
+                        <div class="hidden sm:block absolute -left-36 top-1 text-right w-28 text-xs font-semibold text-pastel-blue tracking-wider uppercase">
+                            Feb 2018 - Sept 2018
+                        </div>
+
+                        <!-- Dot Indicator -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900 group-hover:bg-pink-400 group-hover:scale-125 transition-all"></div>
+
+                        <!-- Content Card -->
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 pb-3 border-b border-blue-500/15">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-pastel-blue transition-colors">
+                                        Collection Officer
+                                    </h3>
+                                    <p class="text-sm font-medium text-blue-300">MANILA TECH GLOBAL SOLUTIONS / ETS2</p>
+                                </div>
+                                <span class="sm:hidden mt-2 text-xs font-semibold text-pastel-blue uppercase">FEBRUARY 2018 - SEPTEMBER 2018</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                                <li>Monitored financial and payment data records to verify accuracy and compliance.</li>
+                                <li>Executed manual adjustments and ledger balancing during operational system downtimes to protect workflow continuity.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5 -->
+                    <div class="relative pl-8 sm:pl-10 group">
+                        <!-- Date Badge on Left Desktop -->
+                        <div class="hidden sm:block absolute -left-36 top-1 text-right w-28 text-xs font-semibold text-pastel-blue tracking-wider uppercase">
+                            Nov 2015 - Sept 2016
+                        </div>
+
+                        <!-- Dot Indicator -->
+                        <div class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-blue-500 border-4 border-slate-900 group-hover:bg-pink-400 group-hover:scale-125 transition-all"></div>
+
+                        <!-- Content Card -->
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 transition-all hover:-translate-y-1">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-4 pb-3 border-b border-blue-500/15">
+                                <div>
+                                    <h3 class="text-xl font-bold text-white group-hover:text-pastel-blue transition-colors">
+                                        Service Crew
+                                    </h3>
+                                    <p class="text-sm font-medium text-blue-300">JOLLIBEE SM LIPA INCORPORATION</p>
+                                </div>
+                                <span class="sm:hidden mt-2 text-xs font-semibold text-pastel-blue uppercase">NOVEMBER 2015 - SEPTEMBER 2016</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300 text-sm leading-relaxed list-disc list-inside">
+                                <li>Operated point-of-sale systems with speed and accuracy while processing cash and digital payments.</li>
+                                <li>Maintained calm, empathetic communication during customer feedback or complaints, efficiently de-escalating issues.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Competencies & Skills Section -->
+        <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-serif text-white">
+                        Core <span class="text-pastel-blue">Competencies</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-pink-400 mx-auto mt-3 rounded-full"></div>
+                    <p class="text-slate-400 text-sm mt-3">Technical toolkit and specialized abilities developed throughout my career.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    <!-- Skill Card 1 -->
+                    <div class="glass-card rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-blue-500/30">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-4">Customer Operations</h3>
+                            <p class="text-xs text-slate-400 mb-6">Expert end-to-end multi-channel communication &amp; resolution strategies.</p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Multichannel Support</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Voice, Chat, Email</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Escalation Resolution</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Conflict Management</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Lead Generation</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Prospecting</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 2 -->
+                    <div class="glass-card rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-indigo-500/30">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-4">Admin Workflows</h3>
+                            <p class="text-xs text-slate-400 mb-6">Precise data management, auditing, and administrative assistance.</p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Data Scraping</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Data Verification</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Appointment Scheduling</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Duplicate Auditing</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Data Entry</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Invoicing &amp; Collection</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skill Card 3 -->
+                    <div class="glass-card rounded-3xl p-8 hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-gradient-to-tr from-blue-500 to-pink-500 flex items-center justify-center text-white text-2xl mb-6 shadow-lg shadow-pink-500/30">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-4">Software &amp; Tools</h3>
+                            <p class="text-xs text-slate-400 mb-6">Proficiency with leading CRM, e-commerce, and productivity platforms.</p>
+                            
+                            <div class="flex flex-wrap gap-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Shopify E-Commerce</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">HubSpot CRM</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Gladly / Gorgias</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">ChatGPT &amp; AI Tools</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">Google Workspace</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">MS Office Suite</span>
+                                <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-900/50 text-pastel-blue border border-blue-500/20">QuickBooks</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-bold font-serif text-white">
+                        Get In <span class="text-pastel-blue">Touch</span>
+                    </h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-blue-500 to-pink-400 mx-auto mt-3 rounded-full"></div>
+                    <p class="text-slate-400 text-sm mt-3">Feel free to reach out for collaborations, opportunities, or inquiries.</p>
+                </div>
+
+                <!-- Contact Info Cards Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-12">
+                    
+                    <!-- Location Card -->
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-blue-400/40 transition-all">
+                        <div class="w-12 h-12 rounded-full bg-blue-900/60 text-pastel-blue flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-map-marker-alt text-lg"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Location</h4>
+                        <p class="text-base font-medium text-white">Lipa City, Batangas, PH</p>
+                    </div>
+
+                    <!-- Phone Card with Click to Copy -->
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-blue-400/40 transition-all relative">
+                        <div class="w-12 h-12 rounded-full bg-blue-900/60 text-pastel-blue flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-phone-alt text-lg"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Phone</h4>
+                        <a href="tel:+639673141409" class="text-base font-medium text-pastel-blue hover:underline block">
+                            +63 9673141409
+                        </a>
+                        <button onclick="copyToClipboard('+639673141409', 'Phone number')" class="mt-2 text-xs text-slate-400 hover:text-white transition-colors">
+                            <i class="far fa-copy mr-1"></i> Copy
+                        </button>
+                    </div>
+
+                    <!-- Email Card with Click to Copy -->
+                    <div class="glass-card rounded-2xl p-6 text-center group hover:border-blue-400/40 transition-all">
+                        <div class="w-12 h-12 rounded-full bg-blue-900/60 text-pastel-blue flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope text-lg"></i>
+                        </div>
+                        <h4 class="text-sm font-semibold text-slate-400 uppercase tracking-wider mb-1">Email</h4>
+                        <a href="mailto:maelizabethbolima.va@gmail.com" class="text-xs sm:text-sm font-medium text-pastel-blue hover:underline block truncate">
+                            maelizabethbolima.va@gmail.com
+                        </a>
+                        <button onclick="copyToClipboard('maelizabethbolima.va@gmail.com', 'Email address')" class="mt-2 text-xs text-slate-400 hover:text-white transition-colors">
+                            <i class="far fa-copy mr-1"></i> Copy
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Contact Form -->
+                <div class="glass-card rounded-3xl p-8 sm:p-10 max-w-3xl mx-auto">
+                    <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" id="name" required placeholder="John Doe" 
+                                       class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-blue-500/20 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Your Email</label>
+                                <input type="email" id="email" required placeholder="john@example.com" 
+                                       class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-blue-500/20 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Subject</label>
+                            <input type="text" id="subject" required placeholder="Project Opportunity / Inquiry" 
+                                   class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-blue-500/20 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all">
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-2">Message</label>
+                            <textarea id="message" rows="4" required placeholder="Hello Elizabeth, I would like to discuss..." 
+                                      class="w-full px-4 py-3 rounded-xl bg-slate-900/60 border border-blue-500/20 text-white placeholder-slate-500 focus:outline-none focus:border-blue-400 focus:ring-1 focus:ring-blue-400 transition-all"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-500 hover:from-blue-500 hover:to-indigo-500 shadow-lg shadow-blue-600/30 transition-all flex items-center justify-center space-x-2">
+                            <i class="fas fa-paper-plane text-sm"></i>
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-blue-500/10 py-8 relative z-10 glass-nav">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <p class="text-xs sm:text-sm text-slate-400">
+                © <span id="current-year"></span> Ma. Elizabeth Bolima. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Element -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 glass-card px-5 py-3 rounded-2xl border border-blue-400/40 text-white text-sm flex items-center space-x-3 shadow-2xl">
+        <i id="toast-icon" class="fas fa-check-circle text-blue-400 text-lg"></i>
+        <span id="toast-message">Notification message</span>
     </div>
-    <!-- Mobile Dropdown Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#131B2E] border-b border-slate-800 px-6 py-4 space-y-3">
-      <a href="#about" class="block text-slate-300 hover:text-cyan-400">About</a>
-      <a href="#experience" class="block text-slate-300 hover:text-cyan-400">Experience</a>
-      <a href="#skills" class="block text-slate-300 hover:text-cyan-400">Skills</a>
-      <a href="#contact" class="block text-cyan-400 font-semibold">Get In Touch</a>
-    </div>
-  </header>
 
-  <main class="pt-20">
-    <!-- HERO SECTION -->
-    <section id="hero" class="relative min-h-[90vh] flex items-center justify-center px-6 py-20 overflow-hidden">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center w-full relative z-10">
-        
-        <!-- Left Column: Intro & CTA -->
-        <div class="md:col-span-7 space-y-6 text-center md:text-left">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold tracking-wide uppercase">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span> Available for New Opportunities
-          </div>
-          
-          <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Christopher Kenneth <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent">Velasquez</span>
-          </h1>
-          
-          <p class="text-lg sm:text-xl text-slate-400 font-medium max-w-xl">
-            Customer Support Specialist | Technical Support Specialist 
-          </p>
+    <!-- Embedded JavaScript Logic -->
+    <script>
+        // Set dynamic copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
-          <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
-            Delivering top-tier multi-channel support, meticulous troubleshooting, and exceptional client satisfaction with proven top-performing track records.
-          </p>
-          
-          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
-            <a href="#contact" class="px-8 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold hover:opacity-90 transition-all shadow-lg shadow-cyan-500/25 flex items-center gap-2">
-              Get In Touch
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
-            <a href="#experience" class="px-8 py-3.5 rounded-xl bg-[#131B2E] border border-slate-700 text-slate-200 font-semibold hover:bg-slate-800 transition-all">
-              View Experience
-            </a>
-          </div>
-        </div>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
 
-        <!-- Right Column: Interactive Profile & Floating SVG Illustrations -->
-        <div class="md:col-span-5 flex justify-center relative">
-          <div class="relative w-72 h-72 sm:w-80 sm:h-80 flex items-center justify-center">
-            <!-- Decorative Spinning Ring -->
-            <div class="absolute inset-0 rounded-full border-2 border-dashed border-cyan-500/30 animate-[spin_20s_linear_infinite]"></div>
-            <div class="absolute inset-4 rounded-full border border-purple-500/20 animate-[spin_15s_linear_infinite_reverse]"></div>
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Toast Notification System
+        function showToast(message, iconClass = 'fas fa-check-circle text-blue-400') {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            const toastIcon = document.getElementById('toast-icon');
+
+            toastMsg.textContent = message;
+            toastIcon.className = iconClass + ' text-lg';
+
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3500);
+        }
+
+        // Copy to Clipboard fallback implementation
+        function copyToClipboard(text, label) {
+            const tempInput = document.createElement('input');
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+
+            showToast(`${label} copied to clipboard!`);
+        }
+
+        // Handle Contact Form Submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
             
-            <!-- Avatar Card -->
-            <div class="w-60 h-60 sm:w-68 sm:h-68 rounded-full overflow-hidden border-4 border-cyan-500/40 shadow-2xl bg-[#131B2E] relative z-10">
-              <img src="Me.jpg" alt="Christopher Kenneth Velasquez" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/300x300/131B2E/06B6D4?text=CKV'" />
-            </div>
-
-            <!-- Floating Computer SVG Badge -->
-            <div class="absolute -top-4 -left-4 bg-[#131B2E] border border-cyan-500/40 p-3 rounded-2xl shadow-xl z-20 animate-bounce duration-1000 flex items-center gap-2">
-              <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-              </svg>
-              <span class="text-xs font-semibold text-cyan-300">Tech Support</span>
-            </div>
-
-            <!-- Floating Telephone SVG Badge -->
-            <div class="absolute -bottom-4 -right-4 bg-[#131B2E] border border-purple-500/40 p-3 rounded-2xl shadow-xl z-20 flex items-center gap-2">
-              <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-              </svg>
-              <span class="text-xs font-semibold text-purple-300">Customer Care</span>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ABOUT ME SECTION -->
-    <section id="about" class="py-24 relative">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center space-y-3 mb-16">
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">About <span class="text-cyan-400">Me</span></h2>
-          <div class="w-16 h-1 bg-cyan-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="glass-card p-8 sm:p-12 rounded-3xl shadow-xl space-y-6 relative overflow-hidden">
-          <div class="absolute top-0 right-0 p-8 opacity-10 pointer-events-none">
-            <svg class="w-48 h-48 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
-            </svg>
-          </div>
-
-          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            I started my professional journey at 20 years old in April 2020 as a Service Crew at Jollibee Burgos Batangas. Within a few months, I was accepted as a Technical Support Specialist in October of 2020. My role there was to troubleshoot and assist customers with their technical problems, fix devices such as printers, and handle sales by offering warranties to printers and subscriptions to their inks. If products were out of warranty and unfixable due to age, I also guided customers toward purchasing new printers to ensure continuity.
-          </p>
-          <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-            After 3 years of working in technical support, I sought new opportunities and transitioned to TaskUs in February 2024 as a Customer Service Specialist handling order placement, deliveries, statuses, and quality management. Up until now, I am continuing my excellence at TaskUs while exploring new growth paths. Across these roles, I have developed hands-on expertise in customer operations, administrative support, invoicing, client communication, e-commerce order management, and CRM systems.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORK HISTORY SECTION -->
-    <section id="experience" class="py-24 relative bg-[#090D16]">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center space-y-3 mb-16">
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Work <span class="text-purple-400">History</span></h2>
-          <div class="w-16 h-1 bg-purple-500 mx-auto rounded-full"></div>
-        </div>
-
-        <div class="relative pl-8 md:pl-0">
-          <!-- Timeline Center Line for desktop -->
-          <div class="timeline-line hidden md:block"></div>
-          <!-- Timeline Left Line for mobile -->
-          <div class="absolute left-3 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 to-purple-500 md:hidden"></div>
-
-          <div class="space-y-12">
+            // Trigger feedback toast
+            showToast(`Thank you, ${name}! Your message has been sent.`, 'fas fa-paper-plane text-pink-400');
             
-            <!-- Job 1 -->
-            <div class="relative md:grid md:grid-cols-2 md:gap-8 items-center">
-              <div class="md:text-right md:pr-12 mb-4 md:mb-0">
-                <span class="inline-block px-3.5 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-semibold text-xs border border-cyan-500/30">Feb 2026 – Present</span>
-                <h3 class="text-xl font-bold text-white mt-2">Customer Support Specialist</h3>
-                <p class="text-cyan-400 font-medium">TaskUs | Batangas, PH</p>
-              </div>
-              <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 top-1.5 w-4 h-4 rounded-full bg-cyan-400 border-4 border-[#0B0F19] shadow-md z-10"></div>
-              <div class="glass-card p-6 rounded-2xl md:ml-12 shadow-lg">
-                <ul class="space-y-2 text-slate-300 text-sm">
-                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-1">▸</span> Managed high volume of live calls and emails with exceptional empathy.</li>
-                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-1">▸</span> Placed customer orders to support store operations and managed deliveries by coordinating directly with drivers for status updates.</li>
-                  <li class="flex items-start gap-2"><span class="text-cyan-400 mt-1">▸</span> Investigated and resolved complex escalations, achieving top-tier QA benchmarks and scores as a top performer for 2 consecutive months.</li>
-                </ul>
-              </div>
-            </div>
-
-            <!-- Job 2 -->
-            <div class="relative md:grid md:grid-cols-2 md:gap-8 items-center">
-              <div class="glass-card p-6 rounded-2xl md:mr-12 md:text-right shadow-lg order-2 md:order-1">
-                <ul class="space-y-2 text-slate-300 text-sm">
-                  <li class="flex items-start gap-2 md:justify-end"><span class="text-purple-400 mt-1">▸</span> Managed high-volume inbound and outbound communications across voice, email, and live chat channels with exceptional empathy.</li>
-                  <li class="flex items-start gap-2 md:justify-end"><span class="text-purple-400 mt-1">▸</span> Processed warranty remote troubleshooting and hardware sales.</li>
-                  <li class="flex items-start gap-2 md:justify-end"><span class="text-purple-400 mt-1">▸</span> Investigated and resolved complex escalations, consistently achieving top-tier QA benchmarks and CSAT scores and earning top monthly agent recognition.</li>
-                </ul>
-              </div>
-              <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 top-1.5 w-4 h-4 rounded-full bg-purple-400 border-4 border-[#0B0F19] shadow-md z-10 order-1 md:order-2"></div>
-              <div class="md:pl-12 mb-4 md:mb-0 order-3">
-                <span class="inline-block px-3.5 py-1 rounded-full bg-purple-500/10 text-purple-400 font-semibold text-xs border border-purple-500/30">October 2020 – Feb 2024</span>
-                <h3 class="text-xl font-bold text-white mt-2">Technical Support Representative</h3>
-                <p class="text-purple-400 font-medium">Sitel | Mandaluyong, PH</p>
-              </div>
-            </div>
-
-            <!-- Job 3 -->
-            <div class="relative md:grid md:grid-cols-2 md:gap-8 items-center">
-              <div class="md:text-right md:pr-12 mb-4 md:mb-0">
-                <span class="inline-block px-3.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold text-xs border border-emerald-500/30">April 2020 – October 2020</span>
-                <h3 class="text-xl font-bold text-white mt-2">Service Crew</h3>
-                <p class="text-emerald-400 font-medium">Jollibee | Batangas City, PH</p>
-              </div>
-              <div class="absolute left-[-21px] md:left-1/2 md:-translate-x-1/2 top-1.5 w-4 h-4 rounded-full bg-emerald-400 border-4 border-[#0B0F19] shadow-md z-10"></div>
-              <div class="glass-card p-6 rounded-2xl md:ml-12 shadow-lg">
-                <ul class="space-y-2 text-slate-300 text-sm">
-                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-1">▸</span> Handled kitchen preparation and backed up team members efficiently under pressure.</li>
-                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-1">▸</span> Ensured high food preparation standards and inventory completion for rapid customer service.</li>
-                  <li class="flex items-start gap-2"><span class="text-emerald-400 mt-1">▸</span> Maintained fast-paced time management and delivered exceptional quality service to all patrons.</li>
-                </ul>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CORE COMPETENCIES SECTION -->
-    <section id="skills" class="py-24 relative">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center space-y-3 mb-16">
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Core <span class="text-cyan-400">Competencies</span></h2>
-          <div class="w-16 h-1 bg-cyan-500 mx-auto rounded-full"></div>
-          <p class="text-slate-400 text-sm">Technical toolkit and specialized abilities developed throughout my career.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <!-- Skill Card 1 -->
-          <div class="glass-card p-8 rounded-3xl shadow-xl space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="p-3 rounded-2xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/></svg>
-              </div>
-              <h3 class="text-2xl font-bold text-white">Customer Operations</h3>
-            </div>
-            <div class="flex flex-wrap gap-2.5">
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-400 transition-colors">Multichannel Support</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-400 transition-colors">Live Calls, Chat, Email</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-400 transition-colors">Escalation Resolution</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-400 transition-colors">Conflict Resolution</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-400 transition-colors">Lead Generation</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-cyan-400 transition-colors">Prospecting</span>
-            </div>
-          </div>
-
-          <!-- Skill Card 2 -->
-          <div class="glass-card p-8 rounded-3xl shadow-xl space-y-6">
-            <div class="flex items-center gap-4">
-              <div class="p-3 rounded-2xl bg-purple-500/10 text-purple-400 border border-purple-500/30">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-              </div>
-              <h3 class="text-2xl font-bold text-white">Technical Operations</h3>
-            </div>
-            <div class="flex flex-wrap gap-2.5">
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-purple-400 transition-colors">Remote Diagnostics</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-purple-400 transition-colors">Hardware & Printer Repair</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-purple-400 transition-colors">Warranty & Sales Upselling</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-purple-400 transition-colors">Order & Delivery Tracking</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-purple-400 transition-colors">Payment Collection</span>
-              <span class="px-4 py-2 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 text-sm font-medium hover:border-purple-400 transition-colors">QA Benchmarking</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-24 relative bg-[#090D16]">
-      <div class="max-w-5xl mx-auto px-6">
-        <div class="text-center space-y-3 mb-16">
-          <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Get In <span class="text-emerald-400">Touch</span></h2>
-          <div class="w-16 h-1 bg-emerald-500 mx-auto rounded-full"></div>
-          <p class="text-slate-400 text-sm">Feel free to reach out for collaborations, opportunities, or just to say hello.</p>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          
-          <!-- Location -->
-          <div class="glass-card p-8 rounded-3xl text-center space-y-4 hover:border-emerald-400/50">
-            <div class="w-12 h-12 mx-auto rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-            </div>
-            <h4 class="text-lg font-bold text-white">Location</h4>
-            <p class="text-slate-300 text-sm">San Mateo San Pascual, Batangas, PH</p>
-          </div>
-
-          <!-- Phone -->
-          <div class="glass-card p-8 rounded-3xl text-center space-y-4 hover:border-cyan-400/50">
-            <div class="w-12 h-12 mx-auto rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center border border-cyan-500/30">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
-            </div>
-            <h4 class="text-lg font-bold text-white">Phone</h4>
-            <a href="tel:+639984219845" class="text-cyan-400 hover:underline text-sm block font-medium">+63 998 421 9845</a>
-          </div>
-
-          <!-- Email -->
-          <div class="glass-card p-8 rounded-3xl text-center space-y-4 hover:border-purple-400/50">
-            <div class="w-12 h-12 mx-auto rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center border border-purple-500/30">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-            </div>
-            <h4 class="text-lg font-bold text-white">Email</h4>
-            <a href="mailto:kennethvelasquez2311@gmail.com" class="text-purple-400 hover:underline text-sm block font-medium break-all">kennethvelasquez2311@gmail.com</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="py-8 bg-[#0B0F19] border-t border-slate-800 text-center text-slate-500 text-sm">
-    <p>&copy; <span id="year"></span> Christopher Kenneth Velasquez. All Rights Reserved.</p>
-  </footer>
-
-  <!-- JavaScript for Mobile Menu & Dynamic Year -->
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Toggle mobile navigation menu
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Close mobile menu on click links
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-  </script>
+            // Reset form
+            document.getElementById('contact-form').reset();
+        }
+    </script>
 </body>
 </html>
